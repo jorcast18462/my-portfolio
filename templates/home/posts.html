@@ -1,0 +1,119 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% include "../includes/navbar.html" %}
+
+<style type="text/css">
+    #div_id_tag > div{
+        overflow-y :scroll;
+        max-height:150px;
+        border: 1px solid #ddd;
+        border-radius : 5px;
+        padding : 5px;
+    }
+    
+    label{
+        color:#333
+    }
+    
+    input {
+        background:red
+    }
+    
+    .centerr {
+        text-align: center;
+    }
+    form{
+        margin-top:25px;
+        padding:20px
+    }
+</style>
+
+<div class="main-container"> 
+    <!--   
+    <h1 style="color:#000">Posts</h1>
+        -->
+    <form id="searchForm" method="GET">
+        {{myfilter.form|crispy}}
+
+        <input class="btn btn-primary" type="submit" value="Search">
+    </form>
+    <br>
+    <br>
+    <div class="post-wrapper">
+        {% for post in posts %}
+        <div>
+            <div class="post">
+                <img class="thumbnail" src="{{post.main_image.url}}">
+                <div class="post-preview">
+                    <h6 class="post-title">{{post.headline}}</h6>
+					<p class="post-intro">{{post.sub_headline}}</p>
+                    <a href="{% url "home:post" post.slug %}">Read More</a>
+                    
+                    {% if request.user.is_authenticated %}
+                    | <a href="{% url "home:update_post" post.slug %}">Edit</a> 
+                    | <a style="color:red" href="{% url "home:delete_post" post.slug %}">Delete</a>
+                    {% endif %}
+
+                    <hr>
+                    {% for tag in post.tag.all %}
+                        <span class="tag">{{tag}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <h3 style="color:#000">No Posts Found...</h3>
+        {% endfor %}
+    </div>
+    
+    {% if posts.has_other_pages %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            
+            {% if posts.has_previous %}
+            <li class="page-item"><a data-page="{{posts.previous_page_number}}" href="?page={{posts.previous_page_number}}" class="page-link">&laquo</a></li>
+
+            <li class="page-item"><a data-page="1" href="?page=1" class="page-link">First</a></li>
+            {% endif %}
+
+            {% for i in posts.paginator.page_range %}
+                {% if posts.number == i %}
+                    <li class="page-item"><a style="background:#0069D9;color:fff" class="active page-link">{{i}}</a></li>
+                {% else %}
+                    <li class="page-item"><a data-page="{{i}}" href="?page={{i}}" class="page-link">{{i}}</a></li>
+                {% endif %}
+                
+            {% endfor %}
+
+            {% if posts.has_next %}
+            <li class="page-item"><a data-page="{{posts.paginator.num_pages}}" href="?page={{posts.paginator.num_pages}}" class="page-link">Last</a></li>
+
+            <li class="page-item"><a data-page="{{posts.next_page_number}}" href="?page={{posts.next_page_number}}" class="page-link">&raquo</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+</div>
+
+
+<script type="text/javascript">
+	let searchForm = document.getElementById('searchForm')
+	let pageLinks = document.getElementsByClassName('page-link')
+
+	for(var i=0; pageLinks.length > i; i++){
+
+		pageLinks[i].addEventListener('click', function(e){
+			e.preventDefault()
+			let page = this.dataset.page
+			console.log('Page:', page)
+			searchForm.innerHTML += `<input value="${page}" name="page" hidden >`
+			searchForm.submit()
+		})
+
+	}
+</script>
+
+{% endblock %}
