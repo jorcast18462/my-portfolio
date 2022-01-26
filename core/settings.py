@@ -141,8 +141,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'core/static'
 ]
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
-# STATIC_URL = '/static/'
 
 # MEDIA
 MEDIA_URL = '/media/'
@@ -173,3 +171,4 @@ CKEDITOR_CONFIGS = {
 
 
 django_heroku.settings(locals())
+
