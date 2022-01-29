@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adminomarlogin/', admin.site.urls),
     path('', include('home.urls', namespace='home')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
