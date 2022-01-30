@@ -50,10 +50,6 @@ def post(request, slug):
     }
     return render(request, 'home/post.html', context )
     
-def portfolio(request):
-    return render(request, 'home/portfolio.html')
-
-
 
 
 # Create Posts
