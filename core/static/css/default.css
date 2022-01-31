@@ -43,7 +43,7 @@ p, li, span, label, input, textarea{
 	/*
 	font-family: 'Roboto Mono', monospace;
 	*/
-	line-height: 21px;
+	line-height: normal;
 }
 
 a{
@@ -344,6 +344,7 @@ h6 { font-size: 16px;}
 	margin-top: 20px;
 	width: 75%;
 	margin: auto;
+	border-radius: 5px;
 }
 
 .social-links h3{

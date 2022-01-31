@@ -13,7 +13,7 @@
     }
 
     #featured_image {
-        width: 560px;
+        width: 520px;
         -webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
         -moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
         box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
@@ -145,6 +145,67 @@
 
 <section class="s2">
     <div class="main-container">
+        <div class="projects">
+            <h3 style="text-align: center;">Some of my past projects</h3>
+
+            <div class="post-wrapper">
+                {% for post in posts %}
+                <div>
+                    <div class="post">
+                        <img class="thumbnail" src="{{post.main_image.url}}">
+                        <div class="post-preview">
+                            <h6 class="post-title">{{post.headline}}</h6>
+                            <p class="post-intro">{{post.sub_headline}}</p>
+                            <a href="{% url "home:post" post.slug %}">Read More</a>
+                            
+                            <hr>
+                            {% for tag in post.tag.all %}
+                                <span class="tag">{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div> 
+                {% endfor %}
+
+            </div>
+            
+            <p align="center">
+                <a style="font-size:17px" href="{% url "home:posts"  %}">View More</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="s1">
+    <div class="main-container">
+        <div class="featured_video_wrapper">
+
+            <a style="margin-top:35px" target="_blank"
+                href="https://your-forever-store.herokuapp.com/">
+             <img id='featured_image' src="{% static 'images/foreve.png' %}">
+            </a>
+
+            <div class="featured_message_1">
+
+                <h2>Django Ecommerce Website</h2>
+                <br>
+                <p><i class="fas fa-check"></i> Full-featured shopping cart with PayPal & credit/debit payments</p>
+                <p><i class="fas fa-check"></i> Product rating & review system</p>
+                <p><i class="fas fa-check"></i> An actual real-world project built in a linear and progressive manner</p>
+                <p><i class="fas fa-check"></i> Admin area to manage customers, products & orders</p>
+                <p style="margin-bottom:40px"><i class="fas fa-check"></i> Product search, carousel, pagination & more</p>
+                
+                <a target="_blank"
+                    href="https://your-forever-store.herokuapp.com/"
+                    id="course-btn" >Live <i class="fas fa-eye"></i></a>
+                <!-- style="background:#1F0909; color:#E67213" -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s2">
+    <div class="main-container">
 
         <div class="about-wrapper">
             <div class="about-me">
@@ -216,67 +277,6 @@
         </div>
     </div>
 </section> 
-
-<section class="s2">
-    <div class="main-container">
-        <div class="projects">
-            <h3 style="text-align: center;">Some of my past projects</h3>
-
-            <div class="post-wrapper">
-                {% for post in posts %}
-                <div>
-                    <div class="post">
-                        <img class="thumbnail" src="{{post.main_image.url}}">
-                        <div class="post-preview">
-                            <h6 class="post-title">{{post.headline}}</h6>
-                            <p class="post-intro">{{post.sub_headline}}</p>
-                            <a href="{% url "home:post" post.slug %}">Read More</a>
-                            
-                            <hr>
-                            {% for tag in post.tag.all %}
-                                <span class="tag">{{tag}}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div> 
-                {% endfor %}
-
-            </div>
-            
-            <p align="center">
-                <a style="font-size:17px" href="{% url "home:posts"  %}">View More</a>
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="s1">
-    <div class="main-container">
-        <div class="featured_video_wrapper">
-
-            <a style="margin-top:35px" target="_blank"
-                href="https://your-forever-store.herokuapp.com/">
-             <img id='featured_image' src="{% static 'images/foreve.png' %}">
-            </a>
-
-            <div class="featured_message_1">
-
-                <h2>Django Ecommerce Website</h2>
-                <br>
-                <p><i class="fas fa-check"></i> Full-featured shopping cart with PayPal & credit/debit payments</p>
-                <p><i class="fas fa-check"></i> Product rating & review system</p>
-                <p><i class="fas fa-check"></i> An actual real-world project built in a linear and progressive manner</p>
-                <p><i class="fas fa-check"></i> Admin area to manage customers, products & orders</p>
-                <p style="margin-bottom:40px"><i class="fas fa-check"></i> Product search, carousel, pagination & more</p>
-                
-                <a target="_blank"
-                    href="https://your-forever-store.herokuapp.com/"
-                    id="course-btn" >Live <i class="fas fa-eye"></i></a>
-                <!-- style="background:#1F0909; color:#E67213" -->
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="s2">
     <div class="main-container">
