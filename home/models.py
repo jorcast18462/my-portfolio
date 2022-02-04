@@ -10,6 +10,14 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+class Recommended(models.Model):
+    headline = models.CharField(max_length=200)
+    sub_headline = models.CharField(max_length=200, null=True, blank=True)
+    main_image = models.ImageField(null=True, blank=True, upload_to="recommended", default="placeholder.png")
+    go = models.URLField(max_length=200, null=True)
+    def __str__(self):
+        return self.headline
+
 class Post(models.Model):
     headline = models.CharField(max_length=200)
     sub_headline = models.CharField(max_length=200, null=True, blank=True)
@@ -20,6 +28,9 @@ class Post(models.Model):
     featured = models.BooleanField(default=False)
     tag = models.ManyToManyField(Tag)
     slug = models.SlugField(null=True, blank=True)
+    live = models.URLField(max_length=200, null=True)
+    recommend = models.ManyToManyField(Recommended)
+
 
     def __str__(self):
         return self.headline
