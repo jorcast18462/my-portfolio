@@ -13,7 +13,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 
 def index(request):
-    posts = Post.objects.filter(active=True, featured=True)[0:3]
+    posts = Post.objects.filter(active=True, featured=True).order_by('num')[0:3]
     
     context = {
         "posts" : posts

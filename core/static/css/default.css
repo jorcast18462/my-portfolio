@@ -1,8 +1,9 @@
+
 :root{
-	--mainColor:#15202B;
+	--mainColor:#101c27;
 	--secondaryColor:#192734;
 
-	--borderColor:#164D56;
+	--borderColor:#176374;
 
 	--mainText:#fff;
 	--secondaryText:#eeeeee;
@@ -17,7 +18,6 @@
 
 
 }
-
 html, body{
 	padding: 0;
 	margin: 0;
@@ -222,15 +222,15 @@ h6 { font-size: 16px;}
 }
 
 #blue-mode{
-	background-color: #192734;
+	background-color: #111E2B;
 }
 
 #green-mode{
-	background-color: #78866b;
+	background-color: #423535;
 }
 
 #purple-mode{
-	background-color: #7E4C74;
+	background-color: #5a1616;
 }
 
 #settings-note{

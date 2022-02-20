@@ -89,11 +89,21 @@
 			padding: 10px;
 			background-color: #fff;
 		}
+
+		.featured_video_wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
 	
 		@media screen and (max-width: 900px){
 			.post-container{
 				width: 95%;
 			}
+			#featured_video {
+				width: 100%;
+			}
+		}
 	</style>
 	
 </head>
@@ -104,8 +114,9 @@
 		<br>
 		<br>
 		<a class="btn btn-sm btn-primary" href="{% url 'home:posts' %}">&laquo Back to Posts</a>
+		{% if post.live %}
 		<a class="btn btn-sm btn-danger" target="_blank" href="{{post.live}}" ><i class="fas fa-eye"></i> Live</a>
-
+		{% endif %}
 		{% if request.user.is_staff %}
 			<a class="btn btn-sm btn-primary" href="{% url 'home:update_post' post.slug %}">Edit</a>
 			<a class="btn btn-sm btn-danger" href="{% url 'home:delete_post' post.slug %}">Delete</a>

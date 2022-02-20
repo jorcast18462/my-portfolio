@@ -1,3 +1,5 @@
+from pyexpat import model
+from statistics import mode
 from django.db import models
 from django.db.models.fields import CharField
 from django.utils.text import slugify
@@ -28,8 +30,9 @@ class Post(models.Model):
     featured = models.BooleanField(default=False)
     tag = models.ManyToManyField(Tag)
     slug = models.SlugField(null=True, blank=True)
-    live = models.URLField(max_length=200, null=True)
+    live = models.URLField(max_length=200, null=True, blank=True)
     recommend = models.ManyToManyField(Recommended)
+    num = models.CharField(default="0", null=True, blank=True, max_length=50)
 
 
     def __str__(self):
