@@ -1,8 +1,9 @@
+import os
 from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
-import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -147,4 +148,4 @@ AWS_STORAGE_BUCKET_NAME = 'omarreda'
 
 
 if os.getcwd() == '/app':
-    DEBUG = False
+    DEBUG = True
