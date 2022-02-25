@@ -147,4 +147,4 @@ AWS_STORAGE_BUCKET_NAME = 'omarreda'
 
 
 if os.getcwd() == '/app':
-    DEBUG = False
+    DEBUG = True
