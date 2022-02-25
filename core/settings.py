@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY_PORT')
 
-DEBUG = True
+DEBUG = config('SECRET_DEBUG')
 
 ALLOWED_HOSTS = [ '127.0.0.1' ,'localhost', 'omarreda.herokuapp.com', 'www.omarreda.me', 'omarreda.me']
 
