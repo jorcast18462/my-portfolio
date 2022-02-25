@@ -10,7 +10,7 @@ SECRET_KEY = config('SECRET_KEY_PORT')
 
 DEBUG = config('DEBUG_PORT')
 
-ALLOWED_HOSTS = [ '127.0.0.1' ,'localhost', 'omarreda.herokuapp.com']
+ALLOWED_HOSTS = [ '127.0.0.1' ,'localhost', 'omarreda.herokuapp.com', 'www.omarreda.me', 'omarreda.me']
 
 
 INSTALLED_APPS = [
