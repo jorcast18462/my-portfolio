@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY_PORT')
 
-DEBUG = config('DEBUG_PORT')
+DEBUG = True
 
 ALLOWED_HOSTS = [ '127.0.0.1' ,'localhost', 'omarreda.herokuapp.com', 'www.omarreda.me', 'omarreda.me']
 
@@ -147,4 +147,4 @@ AWS_STORAGE_BUCKET_NAME = 'omarreda'
 
 
 if os.getcwd() == '/app':
-    DEBUG = True
+    DEBUG = False
