@@ -9,7 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY_PORT')
 
-DEBUG = config('FOREVER_DEBUGG')
+DEBUG = config('PORTOFLIO_DEB')
+
 
 ALLOWED_HOSTS = [ '127.0.0.1' ,'localhost', 'omarreda.herokuapp.com', 'www.omarreda.me', 'omarreda.me']
 
@@ -150,3 +151,4 @@ AWS_STORAGE_BUCKET_NAME = 'omarreda'
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
+    DEBUG = False
