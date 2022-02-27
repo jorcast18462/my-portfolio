@@ -17,23 +17,24 @@
 
 
 }*/
-:root{
-	
-	--mainColor:#312222;
-	--secondaryColor:#423535;
 
-	--borderColor:#F0A500;
+:root{
+	--mainColor:#101c27;
+	--secondaryColor:#192734;
+
+	--borderColor:#176374;
 
 	--mainText:#fff;
 	--secondaryText:#eeeeee;
 
 	--themeDotBorder:#FFF;
 
-	--previewBg:#412222d8;
-	--previewShadow:#291515;
+	--previewBg:rgb(25, 39, 52, 0.8);
+	--previewShadow:#111921;
 
 
-	--buttonColor:#ffa550;
+	--buttonColor:#17a2b8;
+
 
 }
 /*

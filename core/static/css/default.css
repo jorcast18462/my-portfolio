@@ -1,21 +1,20 @@
-
 :root{
-	--mainColor:#101c27;
-	--secondaryColor:#192734;
+	
+	--mainColor:#312222;
+	--secondaryColor:#423535;
 
-	--borderColor:#176374;
+	--borderColor:#F0A500;
 
 	--mainText:#fff;
 	--secondaryText:#eeeeee;
 
 	--themeDotBorder:#FFF;
 
-	--previewBg:rgb(25, 39, 52, 0.8);
-	--previewShadow:#111921;
+	--previewBg:#412222d8;
+	--previewShadow:#291515;
 
 
-	--buttonColor:#17a2b8;
-
+	--buttonColor:#ffa550;
 
 }
 html, body{
@@ -230,7 +229,7 @@ h6 { font-size: 16px;}
 }
 
 #purple-mode{
-	background-color: #5a1616;
+	background-color: #2A1933;
 }
 
 #settings-note{

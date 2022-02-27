@@ -1,19 +1,19 @@
 :root{
-	--mainColor:#331c1c;
-	--secondaryColor:#472222;
+	--mainColor:#2a1933;
+	--secondaryColor:#221129;
 
-	--borderColor:#EC4646;
+	--borderColor:#9114b4;
 
 	--mainText:#fff;
 	--secondaryText:#eeeeee;
 
 	--themeDotBorder:#FFF;
 
-	--previewBg:#571c1cd3;
-	--previewShadow:#381818;
+	--previewBg:#340c49c4;
+	--previewShadow:#331347;
 
 
-	--buttonColor:#8a1414;
+	--buttonColor:#9632cc;
 
 
 }
